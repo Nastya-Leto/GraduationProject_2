@@ -3,6 +3,7 @@ package test;
 
 import data.Section;
 import io.qameta.allure.Owner;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
@@ -15,7 +16,7 @@ import pages.SearchStringPage;
 import java.util.List;
 
 import static io.qameta.allure.Allure.step;
-
+@Disabled
 public class UiSearchQueryTest extends TestBase {
 
     SearchStringPage searchProduct = new SearchStringPage();

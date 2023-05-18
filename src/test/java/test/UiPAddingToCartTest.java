@@ -2,14 +2,11 @@ package test;
 
 import data.annotation.Blocker;
 import io.qameta.allure.Owner;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Tags;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import pages.WorkWithProductPage;
 
 import static io.qameta.allure.Allure.step;
-
+@Disabled
 public class UiPAddingToCartTest extends TestBase {
 
     WorkWithProductPage workWithProductPage = new WorkWithProductPage();

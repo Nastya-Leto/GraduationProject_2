@@ -5,11 +5,13 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import data.Section;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
+import io.restassured.RestAssured;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.provider.Arguments;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import testrail.APIClient;
 
 import java.util.List;
 import java.util.Map;
@@ -20,6 +22,13 @@ public class TestBase {
     public String product = "Вафельница";
     public String city = "Самара";
     public String message = "В корзине пока нет товаров";
+
+    /*public static final APIClient client = new APIClient("http:///testrail/");
+
+    public TestBase() {
+        client.setUser("stasia-oops@yandex.ru");
+        client.setPassword("Zai6598084*");
+    }*/
 
     public static Stream<Arguments> sectionContentTest() {
         return Stream.of(
@@ -53,15 +62,19 @@ public class TestBase {
         Configuration.browserSize = "1920x1080";
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
+        RestAssured.baseURI = "https://qanastya.testrail.io/index.php";
 
-        DesiredCapabilities capabilities = new DesiredCapabilities();
+
+
+
+       /* DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
                 "enableVideo", true
 
         ));
         Configuration.browserCapabilities = capabilities;
-
+*/
 
 
     }

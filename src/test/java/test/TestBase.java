@@ -19,7 +19,7 @@ import java.util.stream.Stream;
 
 public class TestBase {
 
-    public String product = "Вафельница";
+    public String product = "Корм для кошек";
     public String city = "Самара";
     public String message = "В корзине пока нет товаров";
 
@@ -61,20 +61,16 @@ public class TestBase {
         Configuration.browserVersion = "100.0";
         Configuration.browserSize = "1920x1080";
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.pageLoadStrategy = "eager";
 
-        RestAssured.baseURI = "https://qanastya.testrail.io/index.php";
-
-
-
-
-       /* DesiredCapabilities capabilities = new DesiredCapabilities();
+       DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
                 "enableVideo", true
 
         ));
         Configuration.browserCapabilities = capabilities;
-*/
+
 
 
     }
